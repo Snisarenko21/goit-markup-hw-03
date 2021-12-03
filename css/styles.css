@@ -45,7 +45,7 @@ body {
   padding-top: 94px;
   padding-bottom: 94px;
 }
-.container header-container {
+.header-container {
   display: flex;
   align-items: center;
 }
