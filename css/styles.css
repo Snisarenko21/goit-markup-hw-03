@@ -7,7 +7,25 @@
   --secondary-font: Raleway;
   --footer-color: #2f303a;
   --text-footer: rgba(255, 255, 255, 0.6);
+  --primary-batton-bg-color: #f5f4fa;
 }
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  list-style: none;
+}
+ul {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
 /* Хедер */
 body {
   font-family: var(--primary-font), sans-serif;
@@ -16,13 +34,21 @@ body {
   letter-spacing: 0.03em;
   font-size: 14px;
 }
-ul {
-  list-style: none;
-}
-a {
-  text-decoration: none;
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.container header-container {
+  display: flex;
+  align-items: center;
+}
 .logo {
   font-family: Raleway, sans-serif;
   font-style: normal;
@@ -35,7 +61,22 @@ a {
 .logo-web {
   color: var(--accent-color);
 }
+.nav-list {
+  display: flex;
+  margin-left: 93px;
+}
+.link-box {
+  display: flex;
+  margin-left: auto;
+}
+.nav-item:not(:last-child) {
+  margin-right: 50px;
+}
+
 .nav-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -45,6 +86,13 @@ a {
 .nav-link:focus {
   color: var(--accent-color);
 }
+.link-box {
+  display: flex;
+}
+.link-box.nav-item:last-child {
+  margin-left: 50;
+}
+
 .contacts-link {
   font-weight: 500;
   font-size: 14px;
@@ -84,6 +132,7 @@ a {
   background-color: #058cf7;
   color: var(--title-text-color);
 }
+
 .title {
   width: 1px;
   height: 1px;
@@ -94,9 +143,21 @@ a {
   clip: rect(0 0 0 0);
 }
 /* Наши преимущества */
+
+.title-details {
+  display: flex;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.item {
+  max-width: 270px;
+}
+.title-details.item:not(:last-child) {
+  margin-left: 30;
+}
+
 .section-title {
   font-weight: 700;
-
   line-height: 1.14;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
@@ -104,12 +165,21 @@ a {
 .details {
   font-style: normal;
   font-weight: 400;
-
   line-height: 1.7;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
 }
 /* процессы и команда */
+.card-set {
+  display: flex;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+.card-set > .img-box {
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
 .vector,
 .team {
   font-weight: 700;
@@ -117,6 +187,14 @@ a {
   line-height: 1.16;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
+  text-align: center;
+}
+.team-list {
+  display: flex;
+}
+.team-list > .team-box {
+  margin-left: 30px;
+  margin-top: 30px;
 }
 .team-name {
   font-weight: 500;
@@ -133,18 +211,57 @@ a {
   color: var(--primary-text-color);
 }
 /* портфолио */
-.filters-button {
+.filter-battons {
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  padding-top: 94px;
+  margin-bottom: 50px;
+}
+.portfolio-button:last-child {
+  margin-right: 8px;
+}
+.portfolio-button {
+  padding: 6px 22px;
+  text-align: center;
+  font-family: Roboto, sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
+  background-color: var(--primary-batton-bg-color);
   cursor: pointer;
+  border: none;
+  box-shadow: none;
+  border-radius: 4px;
 }
-.filters-button:hover,
-.filters-button:focus {
+.portfolio-button:hover,
+.portfolio-button:focus {
   color: var(--title-text-color);
   background-color: var(--accent-color);
+}
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  padding-bottom: 94px;
+}
+.portfolio-list > .portfolio-item {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.portfolio-item:nth-child(3n) {
+  margin-right: 0;
+}
+.portfolio-item:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 .portfolio-title {
   color: var(--title-text-color);
@@ -168,6 +285,7 @@ a {
   line-height: 1.2;
   letter-spacing: 0.03em;
   color: var(--primary-white-color);
+  padding-top: 60px;
 }
 
 .link-connection {
@@ -176,6 +294,7 @@ a {
   line-height: 1.7;
   letter-spacing: 0.03em;
   color: var(--text-footer);
+  padding-bottom: 60px;
 }
 .link-connection:hover,
 .link-connection:focus {
